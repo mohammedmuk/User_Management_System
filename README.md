@@ -55,7 +55,7 @@ The User Management System API allows you to manage user data with endpoints for
   - **Error (404 Not Found):**
     ```json
     {
-      "error": "User not found."  // Indicates the user does not exist.
+      "detail": "Not Found"  // Indicates the user does not exist.
     }
     ```
 
@@ -77,7 +77,7 @@ The User Management System API allows you to manage user data with endpoints for
   - **Error (404 Not Found):**
     ```json
     {
-      "error": "User not found."  // Indicates the user does not exist.
+      "detail": "Not Found"  // Indicates the user does not exist.
     }
     ```
 
@@ -113,7 +113,7 @@ The User Management System API allows you to manage user data with endpoints for
   - **Error (400 Bad Request):**
     ```json
     {
-      "name": ["This field is required."]  // Validation errors if the request is malformed.
+      "username": ["This field is required."]  // Validation errors if the request is malformed.
     }
     ```
 
@@ -143,13 +143,13 @@ The User Management System API allows you to manage user data with endpoints for
   - **Error (404 Not Found):**
     ```json
     {
-      "error": "User not found."  // Indicates the user to update does not exist.
+      "detail": "Not Found"  // Indicates the user to update does not exist.
     }
     ```
   - **Error (400 Bad Request):**
     ```json
     {
-      "name": ["This field is required."]  // Validation errors if the request is malformed.
+      "username": ["This field is required."]  // Validation errors if the request is malformed.
     }
     ```
 
@@ -168,7 +168,7 @@ The User Management System API allows you to manage user data with endpoints for
   - **Error (404 Not Found):**
     ```json
     {
-      "error": "User not found."  // Indicates the user to delete does not exist.
+      "detail": "Not Found"  // Indicates the user to delete does not exist.
     }
     ```
 
@@ -187,7 +187,7 @@ The User Management System API allows you to manage user data with endpoints for
   - **Error (404 Not Found):**
     ```json
     {
-      "error": "User not found."  // Indicates the user to delete does not exist.
+      "detail": "Not Found"  // Indicates the user to delete does not exist.
     }
     ```
 
@@ -207,3 +207,35 @@ The API provides appropriate HTTP status codes and error messages for various sc
 
 ```bash
 curl -X POST http://<your-domain>/api/users/create/ -H "Content-Type: application/json" -d '{"name": "John Doe"}'
+
+
+## Setup
+
+To set up the project locally, follow these steps:
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone <repository-url>
+   cd <repository-directory>
+
+2. **Create a Virtual Environment**
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+
+3. **Install Dependencies**
+
+   ```bash
+   pip install django djangorestframework
+
+4. **Apply Migrations**
+
+   ```bash
+   python manage.py migrate
+
+5. **Run the Development Server**
+
+   ```bash
+   python manage.py runserver
