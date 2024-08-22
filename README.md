@@ -19,7 +19,7 @@ The User Management System API allows you to manage user data with endpoints for
   - **Body:**
     ```json
     {
-      "name": "string"  // The name of the user to be created.
+      "username": "string"  // The name of the user to be created.
     }
     ```
 - **Response:**
@@ -27,13 +27,13 @@ The User Management System API allows you to manage user data with endpoints for
     ```json
     {
       "id": 1,          // Unique identifier for the created user.
-      "name": "string"  // The name of the user.
+      "username": "string"  // The name of the user.
     }
     ```
   - **Error (400 Bad Request):**
     ```json
     {
-      "name": ["This field is required."]  // Validation errors if the request is malformed.
+      "username": ["This field is required."]  // Validation errors if the request is malformed.
     }
     ```
 
@@ -49,7 +49,7 @@ The User Management System API allows you to manage user data with endpoints for
     ```json
     {
       "id": 1,          // Unique identifier of the user.
-      "name": "string"  // The name of the user.
+      "username": "string"  // The name of the user.
     }
     ```
   - **Error (404 Not Found):**
@@ -71,7 +71,7 @@ The User Management System API allows you to manage user data with endpoints for
     ```json
     {
       "id": 2,          // Unique identifier of the user.
-      "name": "string"  // The name of the user.
+      "username": "string"  // The name of the user.
     }
     ```
   - **Error (404 Not Found):**
@@ -93,7 +93,7 @@ The User Management System API allows you to manage user data with endpoints for
   - **Body:**
     ```json
     {
-      "name": "new_name"  // The new name for the user.
+      "username": "new_name"  // The new name for the user.
     }
     ```
 - **Response:**
@@ -101,13 +101,13 @@ The User Management System API allows you to manage user data with endpoints for
     ```json
     {
       "id": 1,          // Unique identifier of the updated user.
-      "name": "new_name"  // The updated name of the user.
+      "username": "new_name"  // The updated name of the user.
     }
     ```
   - **Error (404 Not Found):**
     ```json
     {
-      "error": "User not found."  // Indicates the user to update does not exist.
+      "detail": "Not Found"  // Indicates the user to update does not exist.
     }
     ```
   - **Error (400 Bad Request):**
@@ -129,7 +129,7 @@ The User Management System API allows you to manage user data with endpoints for
   - **Body:**
     ```json
     {
-      "name": "new_name"  // The new name for the user.
+      "username": "new_name"  // The new name for the user.
     }
     ```
 - **Response:**
@@ -137,7 +137,7 @@ The User Management System API allows you to manage user data with endpoints for
     ```json
     {
       "id": 2,          // Unique identifier of the updated user.
-      "name": "new_name"  // The updated name of the user.
+      "username": "new_name"  // The updated name of the user.
     }
     ```
   - **Error (404 Not Found):**
@@ -161,9 +161,11 @@ The User Management System API allows you to manage user data with endpoints for
 - **Request:**
   - **Query Parameter:** `username=name` (Replace `name` with the username of the user to delete.)
 - **Response:**
-  - **Success (204 No Content):**
+  - **Success (200 OK):**
     ```json
-    // No content is returned on successful deletion.
+    {
+      "success": "User was deleted"  // Validation errors if the request is malformed.
+    }
     ```
   - **Error (404 Not Found):**
     ```json
@@ -182,7 +184,9 @@ The User Management System API allows you to manage user data with endpoints for
 - **Response:**
   - **Success (204 No Content):**
     ```json
-    // No content is returned on successful deletion.
+    {
+      "success": "User was deleted"  // Validation errors if the request is malformed.
+    }
     ```
   - **Error (404 Not Found):**
     ```json
@@ -197,7 +201,6 @@ The API provides appropriate HTTP status codes and error messages for various sc
 
 - **400 Bad Request:** Returned when the request is invalid or missing required fields. The response will include details about the validation errors.
 - **404 Not Found:** Returned when the requested user does not exist. The response will include an error message specifying that the user was not found.
-- **204 No Content:** Returned when a delete operation is successful and no content is returned.
 
 ## Example Requests and Responses
 
