@@ -221,6 +221,7 @@ To set up the project locally, follow these steps:
    ```bash
    git clone <repository-url>
    cd <repository-directory>
+   ```
 
 2. **Create a Virtual Environment**
 
