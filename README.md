@@ -11,7 +11,7 @@ The User Management System API allows you to manage user data with endpoints for
 
 ### 1. Create User
 
-- **Endpoint:** `POST /api/users/create/`
+- **Endpoint:** `POST /api/users/create`
 - **Description:** Creates a new user.
 - **Request:**
   - **Headers:**
@@ -39,7 +39,7 @@ The User Management System API allows you to manage user data with endpoints for
 
 ### 2. Retrieve User by Username
 
-- **Endpoint:** `GET /api/users/retrieve/`
+- **Endpoint:** `GET /api/users/retrieve`
 - **Query Parameters:** `username=name`
 - **Description:** Retrieves a user by their username.
 - **Request:**
@@ -61,7 +61,7 @@ The User Management System API allows you to manage user data with endpoints for
 
 ### 3. Retrieve User by ID
 
-- **Endpoint:** `GET /api/users/retrieve/`
+- **Endpoint:** `GET /api/users/retrieve`
 - **Query Parameters:** `id=2`
 - **Description:** Retrieves a user by their ID.
 - **Request:**
@@ -83,7 +83,7 @@ The User Management System API allows you to manage user data with endpoints for
 
 ### 4. Update User by Username
 
-- **Endpoint:** `PUT /api/users/update/`
+- **Endpoint:** `PUT /api/users/update`
 - **Query Parameters:** `username=name`
 - **Description:** Updates the user's information by username.
 - **Request:**
@@ -119,7 +119,7 @@ The User Management System API allows you to manage user data with endpoints for
 
 ### 5. Update User by ID
 
-- **Endpoint:** `PUT /api/users/update/`
+- **Endpoint:** `PUT /api/users/update`
 - **Query Parameters:** `id=2`
 - **Description:** Updates the user's information by ID.
 - **Request:**
@@ -155,7 +155,7 @@ The User Management System API allows you to manage user data with endpoints for
 
 ### 6. Delete User by Username
 
-- **Endpoint:** `DELETE /api/users/delete/`
+- **Endpoint:** `DELETE /api/users/delete`
 - **Query Parameters:** `username=name`
 - **Description:** Deletes a user by their username.
 - **Request:**
@@ -174,7 +174,7 @@ The User Management System API allows you to manage user data with endpoints for
 
 ### 7. Delete User by ID
 
-- **Endpoint:** `DELETE /api/users/delete/`
+- **Endpoint:** `DELETE /api/users/delete`
 - **Query Parameters:** `id=2`
 - **Description:** Deletes a user by their ID.
 - **Request:**
